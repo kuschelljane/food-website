@@ -1,0 +1,203 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aladdin Mediterranean Restaurants</title>
+<link rel="icon" href="icons/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="index.css">
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/45fe71c572.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+    .input, .close{
+    display: none;
+    }
+
+    .highlight {
+        background-color: #FE7349;
+        color: whitesmoke;
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <a><img id = "search" class = "search" src="icons/search.svg" alt="search"/></a>
+        <p class="close">x</p>
+        <div class = "select-store">
+            <img class = "map" src="icons/map.svg" alt="map"/>
+            <select name = "store" id ="store">
+                <option>Locations</option>
+                <option value = "Montrose Store">Montrose Store</option>
+                <option value= "Garden Oaks">Garden Oaks</option>
+            </select>
+        </div>
+        <a class="view-menu">View Our Menu <span style = "color: #948176;">(PDF)</span></a>
+        <div class = "input">
+            <input id = "searchinput" class = "searchbar" type="text" placeholder="Start typing the name of the dish"/>
+            <button id = "search-button">Search</button>
+        </div>
+        <img class = "logo" src="icons/logo.svg" alt="logo"/>
+        <a id = "services" class="link">Services</a>
+        <a id = "story" class="link">Our Story</a>
+        <a id = "contact" class="link">Contact</a>
+        <a><i id = "badge" class="fa badge fa-lg" value="0">&#xf290;</i></a>
+        <span class="hamburger-menu material-symbols-outlined">menu</span>
+        <div class="line">
+            <hr class="left-line"></hr>
+            <hr class="right-line"></hr>
+        </div>
+    </nav>
+
+    <div class = "cart-values">
+        <div class="cart-store">
+            <img class = "map" src="icons/map.svg" alt="map"/>
+            <p>Order from <span id = "store-location"></span></p>
+        </div>
+        <p class="delivery-note">Preparation and delivery may take up to an hour. </p>
+        <div class="cart-labels">
+            <label class = "cart-title">Your Cart</label>
+            <label class="product-title">Product</label>
+            <label class="product-price"> Price</label>
+          </div>
+          <hr class = "cart-line">
+          <div class = "cart-bottom">
+            <div class="cart-items">
+            <div class="price-items">
+                <p class = "total">Total Price: 
+                    <span class = "dollar">$</span>
+                    <span class="total-price">0.00</span>
+                </p>
+            </div>
+            <button id = "checkout" class="checkout">Checkout</button>
+            </div>
+          </div>
+    </div>
+
+    <div id = "award" class="award">
+        <img src="icons/award.svg" alt="award" />
+        <div class="award-overlay">
+            <h2 class="number">17</h2>
+            <h2 class="years">YEARS</h2>
+        </div>
+        <p class="award-description">MAKING DELICIOUS FOOD</p>
+    </div>
+    
+    <div class="header">
+        <div class = "header-title">
+            <h1>Your Everyday Choice</h1>
+            <h1>For That Sizzle</h1>
+        </div>
+        <div id = "circle" class="circle-container">
+            <div class="circle"></div>
+            <p>Order Now<i class="fa fa-arrow-up" aria-hidden="true"></i></p>
+        </div>
+        <div class="review">
+            <a href="https://www.yelp.com/biz/aladdin-mediterranean-cuisine-houston" target="_blank">
+            <span><i class="fa-brands fa-yelp"></i><span> Reviews 6,170</span></span></a>
+        </div>
+    </div>
+
+    <div id = "topseller" class = "topseller-container">
+        <p class ="topseller">TOP Sellers</p>
+        <ul class="topseller-wrapper" id="topsellerList"></ul>
+    </div>
+
+    <div class="menu">
+        <p>Our Menu</p>
+        <hr class="menu-line"></hr>
+        <div class = "menu-details">
+        <div class = "menu-text">
+            <h1>Dips</h1>
+            <h1 class="salads active">Salads & Cold Vegetables</h1>
+            <h1>Hot Vegetables</h1>
+            <h1>Combo Platters</h1>
+            <h1>Kabobs & Entree's</h1>
+            <h1>Desserts</h1>
+            <h1>Drinks</h1>
+        </div>
+        <div class = "menu-images">
+            <img class="food4"  src = "images/food4.svg">
+            <img class="food4-line" src = "icons/food4-line.svg">
+            <img class="green" src ="icons/green.svg">
+            <img class="food5" src = "images/food5.svg">
+            <img class="food5-line" src = "icons/food5-line.svg">
+            <img class ="bluefish" src="icons/bluefish.svg">
+            <img class="food6" src = "images/food6.svg">
+            <img class="food6-line" src = "icons/food6-line.svg">
+        </div>
+        </div>
+        <div class="menu-bottom">
+            <img class="wine1" src = "icons/wine.svg">
+            <img class="wine2" src = "icons/wine.svg">
+            <div class="bottom-text">
+                <p>Here you can view our dishes</p>
+                <p> and go to our menu to order.</p>
+            </div>
+            <img class="yellowfish" src = "icons/yellowfish.svg">
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class = "left-images">
+            <div class = "logo-images">
+                <img id = "footer-logo" class = "footer-logo" src="icons/logo.svg" alt="logo"/>
+                <img class = "halal" src="images/halal.svg" alt="halal"/>
+            </div>
+            <div class = "social-links">
+                <a href="https://www.facebook.com/AladdinsHouston" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/aladdinhouston/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/aladdinshouston" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.yelp.com/biz/aladdin-mediterranean-cuisine-houston" target="_blank"><i class="fa-brands fa-yelp"></i></a>
+            </div>
+        </div>
+        <div class = "navigation">
+            <p class="footer-search">Search Dish</p>
+            <p class = "footer-location">Locations</p>
+            <p class = "footer-menu">View Our Menu (PDF)</p>
+            <p class="footer-services">Services</p>
+            <p class="footer-story">Our Story</p>
+            <p class="footer-contact">Contact</p>
+            <p class="footer-cart">Cart Items</p>
+            <p class="footer-top">Top Sellers</p>
+        </div>
+        <div class = "store-montrose">
+            <p class="location-name">Montrose Restaurant</p>
+            <a href="tel:7139422321">
+            <p><i class="fa fa-phone"></i>(713) 942 - 2321</p></a>
+            <a href="http://maps.google.com/?q=912 Westheimer St. Houston. TX 77006" target="_blank">
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>912 Westheimer St. Houston. TX 77006</p></a>
+    
+            <p class="location-hours">Operating Hours</p>
+            <p>Thurs - Sat: 11:00 AM - 10:00 PM</p>
+            <p>Sun - Wed: 11:00 AM -  9:00 PM</p>
+        </div>
+        <div class = "store-garden">
+            <p class="location-name">Garden Oaks Restaurant</p>
+            <a href="tel:7139422321">
+            <p><i class="fa fa-phone"></i>(713) 942 - 2321</p></a>
+            <a href="http://maps.google.com/?q=1737 w. 34th St. Houston. TX 77018" target="_blank">
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>1737 w. 34th St. Houston. TX 77018</p></a>
+
+            <p class="location-hours">Operating Hours</p>
+            <p>Mon - Fri: 11:00 AM - 9:00 PM</p>
+            <p>Sat: 11:00 AM - 9:00 PM</p>
+            <p>Sun: 11:00 AM -  8:00 PM</p>
+        </div>
+        <div class="back-top">
+            <i id = "arrow-top" class="fa-solid fa-circle-chevron-up"></i>
+            <p>Scroll to Top</p>
+        </div>
+    </div>
+    
+    <div class = "copyright">
+        <hr>
+        <p>© 2024 Aladdin Houston. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</head>
+</html>
